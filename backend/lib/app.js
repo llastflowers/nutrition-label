@@ -3,6 +3,13 @@ const app = express();
 const cookieParser = require('cookie-parser');
 app.use(express.json());
 
+app.use(require('cors')({
+  origin: true,
+  credentials: true
+}));
+
+app.use(cookieParser);
+
 // pass through search from USDA-FDC database
 app.use('/api/v1/search', require('./routes/search.routes'));
 
