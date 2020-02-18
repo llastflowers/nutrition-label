@@ -1,9 +1,10 @@
 import React from 'react';
 import FoodSearchSelect from '../containers/FoodSearchSelect';
-import NutritionLabel from '../containers/NutritionLabel';
+// import NutritionLabel from '../containers/NutritionLabel';
 import {
   BrowserRouter as Router,
   Route,
+  Switch,
   Link
 } from 'react-router-dom';
 
@@ -21,8 +22,10 @@ export default function App() {
   return (
     <Router>
       <Header />
-      <Route exact path="/" component={FoodSearchSelect}/>
-      <Route path="/nutritionlabel" component={NutritionLabel} />
+      <Switch>
+        <Route exact path="/" component={FoodSearchSelect}/>
+        {/* <Route path="/nutritionlabel" component={NutritionLabel} /> */}
+      </Switch>
     </Router>
   );
 }
