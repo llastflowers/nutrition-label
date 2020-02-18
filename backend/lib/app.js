@@ -8,7 +8,7 @@ app.use(require('cors')({
   credentials: true
 }));
 
-app.use(cookieParser);
+app.use(cookieParser());
 
 // pass through search from USDA-FDC database
 app.use('/api/v1/search', require('./routes/search.routes'));
