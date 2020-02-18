@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import useFoods from '../hooks/useFoods';
+import FoodResults from '../components/foodresults/FoodResults';
 
 const FoodSearchSelect = () => {
   const [query, setQuery] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   const foodsList = useFoods(query);
-  const foodItem = foodsList.map(food => (
-    <li key={food.id}>
-      <h2>{food.name}</h2>
-    </li>
-  )
-  );
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setQuery(searchTerm);
+  };
 
   return (
     <>
-      <form>
-        <input type='text' placeholder="Search for a food" value={query} onChange={(event) => setQuery(event.target.value)} />
+      <form onSubmit={handleSubmit}>
+        <input type='text' placeholder="Search for a food" value={searchTerm} onChange={(event) => {setSearchTerm(event.target.value);}} />
+        <button>Search</button>
       </form>
-      <ul>
-        {foodItem}
-      </ul>
+      {foodsList.length > 1 && <FoodResults foodsList={foodsList} />}
     </>
   );
 };

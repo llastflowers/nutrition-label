@@ -6,7 +6,7 @@ const useFoods = (query) => {
   useEffect(() => {
     if(query !== '') {
       getFoods(query)
-        .then(foodResults => setFoodResults(foodResults));
+        .then(results => setFoodResults(results));
     }
   }, [query]);
   return foodResults;
