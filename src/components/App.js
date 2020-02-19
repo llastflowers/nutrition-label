@@ -1,5 +1,6 @@
 import React from 'react';
 import FoodSearchSelect from '../containers/FoodSearchSelect';
+import FoodDetail from '../containers/FoodDetail';
 import {
   BrowserRouter as Router,
   Route,
@@ -22,6 +23,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={FoodSearchSelect}/>
+        <Route path="/:id" component={FoodDetail}/>
       </Switch>
     </Router>
   );
