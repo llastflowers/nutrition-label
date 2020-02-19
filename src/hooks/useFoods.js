@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getFoods } from '../services/fakeFoodData.js';
+import { getFoods } from '../services/foodAPI';
 
 const useFoods = (query) => {
   const [foodResults, setFoodResults] = useState([]);
