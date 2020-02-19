@@ -15,7 +15,7 @@ const FoodSearchSelect = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type='text' placeholder="Search for a food" value={searchTerm} onChange={(event) => {setSearchTerm(event.target.value);}} />
+        <input type='text' placeholder="Search for a food by name" value={searchTerm} onChange={(event) => {setSearchTerm(event.target.value);}} />
         <button>Search</button>
       </form>
       {foodsList.length > 1 && <FoodResults foodsList={foodsList} />}

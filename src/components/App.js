@@ -12,7 +12,7 @@ const Header = () => (
   <header>
     <h1>Nutrition Quest</h1>
     <nav>
-      <Link to="/">Home</Link>
+      <Link to="/">Back to Search</Link>
     </nav>
   </header>
 );
