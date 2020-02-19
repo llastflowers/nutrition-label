@@ -3,13 +3,20 @@ import { useParams } from 'react-router-dom';
 import useNutrition from '../hooks/useNutrition';
 
 const FoodDetail = () => {
-  // const [fcdId, setFdcId] = useState('');
   const { id } = useParams();
   const nutritionList = useNutrition(id);
-  
+  const nutrientItem = nutritionList.map(({ fdcId, name, amount }) => (
+    <li key={fdcId}>
+      <strong>{name}</strong>: {amount}
+    </li>
+  )
+  );
+
   return (
     <>
-      {JSON.stringify(nutritionList)}
+      <ul>
+        {nutrientItem}
+      </ul>
     </>
   );
 };
